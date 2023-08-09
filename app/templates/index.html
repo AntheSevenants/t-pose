@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Load a CSV file{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <h1>Convert t-scan CSV file to Excel</h1>
+    <p>Use t-pose to convert your <a href="https://tscan.hum.uu.nl/tscan/">t-scan</a> CSV file to an Excel file with no hassle. Your decimals are safe with me.</p>
+    <form action="/do" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="csv" class="form-label">t-scan CSV file:</label>
+            <input type="file" class="form-control" name="csv" accept=".csv">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Download Excel file</button>
+        </div>
+    </form>
+    <p class="text-secondary"><i class="bi bi-info-circle"></i> t-pose saves your CSV file temporarily to convert it to Excel. Your data will be deleted immediately after you have downloaded your Excel file.</p>
+    <div class="text-center">
+        <p>Thrown together by <a href="https://anthe.sevenants.net/">Anthe Sevenants</a></p>
+    </div>
+{% endblock %}
