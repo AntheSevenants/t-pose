@@ -2,7 +2,7 @@ import os
 import argparse
 from app import create_app
 
-parser = argparse.ArgumentParser(description='Run tpose frontend')
+parser = argparse.ArgumentParser(description='Run t-pose frontend')
 parser.add_argument('-debug', '--debug', nargs='?', type=bool, default=False, help='output file, in JSON format')
 
 args = parser.parse_args()
@@ -24,5 +24,5 @@ if debug:
 	app.run(host='0.0.0.0', debug=debug)
 else:
 	from waitress import serve
-	print("tpose started")
+	print("t-pose started")
 	serve(app, host='0.0.0.0', port=8080)
