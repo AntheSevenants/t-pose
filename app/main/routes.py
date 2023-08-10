@@ -50,7 +50,7 @@ def do():
         file.save(file_path)
 
     # Load into pandas
-    df = pd.read_csv(file_path, sep=",", header=0)
+    df = pd.read_csv(file_path, sep=",", header=0, index_col=False)
     
     # Create Excel filename
     excel_path = f"{file_path}.xlsx"
@@ -61,7 +61,7 @@ def do():
                         engine_kwargs={'options': {'strings_to_numbers': True}})
     sheet_name = "t_pose" # funny funny
 
-    df.to_excel(writer, sheet_name=sheet_name)
+    df.to_excel(writer, sheet_name=sheet_name, index=False)
 
     workbook  = writer.book
     worksheet = writer.sheets[sheet_name]   
