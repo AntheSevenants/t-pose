@@ -161,3 +161,6 @@ cython_debug/
 
 *.sh
 docker-compose*.yml
+
+# Ignore cache folder
+cache/*
